@@ -1,0 +1,182 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (357.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (316.2ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBlogs (20140701154545)
+  [4;36;1mSQL (96.9ms)[0m   [0;1mCREATE TABLE `blogs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `title` varchar(255), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (49.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20140701154545')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `blogs`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `blogs`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2014-07-01 11:47:51) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 55ms (View: 10, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-07-01 11:48:02) [GET]
+
+ActionController::RoutingError (No route matches "/blog" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+  /home/avkr/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/avkr/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/avkr/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2014-07-01 11:48:06) [GET]
+  [4;36;1mBlog Load (19.3ms)[0m   [0;1mSELECT * FROM `blogs` [0m
+Rendering template within layouts/blogs
+Rendering blogs/index
+Completed in 191ms (View: 148, DB: 19) | 200 OK [http://localhost/blogs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2014-07-01 11:48:09) [GET]
+  [4;35;1mBlog Columns (22.2ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+Rendering template within layouts/blogs
+Rendering blogs/new
+Completed in 86ms (View: 59, DB: 22) | 200 OK [http://localhost/blogs/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2014-07-01 11:48:14) [GET]
+  [4;36;1mBlog Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+Rendering template within layouts/blogs
+Rendering blogs/new
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/blogs/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2014-07-01 11:48:37) [POST]
+  Parameters: {"authenticity_token"=>"lh7/4qMYXb/PPLI1PEK++2FzKxmomcUEzVwFk0Go36U=", "blog"=>{"name"=>"first name", "title"=>"first title", "content"=>"first content"}, "commit"=>"Create"}
+  [4;35;1mBlog Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlog Create (121.9ms)[0m   [0mINSERT INTO `blogs` (`name`, `title`, `content`, `created_at`, `updated_at`) VALUES('first name', 'first title', 'first content', '2014-07-01 15:48:37', '2014-07-01 15:48:37')[0m
+  [4;36;1mSQL (111.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/blogs/1
+Completed in 247ms (DB: 234) | 302 Found [http://localhost/blogs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2014-07-01 11:48:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBlog Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (25.8ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 1) [0m
+Rendering template within layouts/blogs
+Rendering blogs/show
+Completed in 56ms (View: 25, DB: 27) | 200 OK [http://localhost/blogs/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2014-07-01 11:48:39) [GET]
+  [4;35;1mBlog Load (0.7ms)[0m   [0mSELECT * FROM `blogs` [0m
+Rendering template within layouts/blogs
+Rendering blogs/index
+  [4;36;1mBlog Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+Completed in 13ms (View: 6, DB: 2) | 200 OK [http://localhost/blogs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2014-07-01 11:48:41) [GET]
+  [4;35;1mBlog Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+Rendering template within layouts/blogs
+Rendering blogs/new
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/blogs/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2014-07-01 11:48:57) [POST]
+  Parameters: {"authenticity_token"=>"lh7/4qMYXb/PPLI1PEK++2FzKxmomcUEzVwFk0Go36U=", "blog"=>{"name"=>"second name", "title"=>"second title", "content"=>"second content"}, "commit"=>"Create"}
+  [4;36;1mBlog Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mBlog Create (20.1ms)[0m   [0;1mINSERT INTO `blogs` (`name`, `title`, `content`, `created_at`, `updated_at`) VALUES('second name', 'second title', 'second content', '2014-07-01 15:48:57', '2014-07-01 15:48:57')[0m
+  [4;35;1mSQL (66.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/blogs/2
+Completed in 107ms (DB: 90) | 302 Found [http://localhost/blogs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2014-07-01 11:48:57) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mBlog Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+  [4;35;1mBlog Load (0.3ms)[0m   [0mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 2) [0m
+Rendering template within layouts/blogs
+Rendering blogs/show
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/blogs/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2014-07-01 11:48:59) [GET]
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM `blogs` [0m
+Rendering template within layouts/blogs
+Rendering blogs/index
+  [4;35;1mBlog Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/blogs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#new (for 127.0.0.1 at 2014-07-01 11:49:01) [GET]
+  [4;36;1mBlog Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+Rendering template within layouts/blogs
+Rendering blogs/new
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/blogs/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#create (for 127.0.0.1 at 2014-07-01 11:49:24) [POST]
+  Parameters: {"authenticity_token"=>"lh7/4qMYXb/PPLI1PEK++2FzKxmomcUEzVwFk0Go36U=", "blog"=>{"name"=>"third name", "title"=>"third title", "content"=>"third content"}, "commit"=>"Create"}
+  [4;35;1mBlog Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mBlog Create (28.7ms)[0m   [0mINSERT INTO `blogs` (`name`, `title`, `content`, `created_at`, `updated_at`) VALUES('third name', 'third title', 'third content', '2014-07-01 15:49:24', '2014-07-01 15:49:24')[0m
+  [4;36;1mSQL (65.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/blogs/3
+Completed in 111ms (DB: 96) | 302 Found [http://localhost/blogs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#show (for 127.0.0.1 at 2014-07-01 11:49:24) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mBlog Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mBlog Load (0.9ms)[0m   [0;1mSELECT * FROM `blogs` WHERE (`blogs`.`id` = 3) [0m
+Rendering template within layouts/blogs
+Rendering blogs/show
+Completed in 14ms (View: 3, DB: 3) | 200 OK [http://localhost/blogs/3]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing BlogsController#index (for 127.0.0.1 at 2014-07-01 11:49:26) [GET]
+  [4;35;1mBlog Load (0.9ms)[0m   [0mSELECT * FROM `blogs` [0m
+Rendering template within layouts/blogs
+Rendering blogs/index
+  [4;36;1mBlog Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `blogs`[0m
+Completed in 15ms (View: 5, DB: 2) | 200 OK [http://localhost/blogs]
